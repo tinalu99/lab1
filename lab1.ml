@@ -42,7 +42,7 @@ exercise2 is a function that returns 42 (instead of failing). When you
 submit, the Exercise 2 unit test should then pass.
 ......................................................................*)
 
-let exercise2 () = failwith "exercise2 not implemented" ;;
+let exercise2 () = 42 ;;
 
 (* Note that your grade on labs is not dependent on your passing the
 unit tests. You'll see that even when a unit test is marked as passed,
@@ -99,7 +99,7 @@ appropriate OCaml expression to assign the value to the variable
 exercise1 below.
 ......................................................................*)
 
-let exercise3 () = failwith "exercise3 not implemented" ;;
+let exercise3 () = -(5 - 3) ;;
 
 (* Hint: The OCaml concrete expression
 
@@ -112,6 +112,15 @@ Exercise 4: Draw the tree that the concrete syntax "- 5 - 3" does
 correspond to. Check it with a member of the course staff if you'd
 like.
 ......................................................................*)
+      -
+      ^
+     / \
+    /   \
+    -    3
+    ^
+   / \
+  /   \
+ 0     5     
 
    
 (*======================================================================
@@ -124,24 +133,21 @@ expressions below? Test your solution by uncommenting the examples
 error is generated.
 ......................................................................*)
 
-(*   <--- remove this start of comment line
+let exercise5a : int = 42 ;;
 
-let exercise5a : ??? = 42 ;;
-
-let exercise5b : ??? =
+let exercise5b : string =
   let greet y = "Hello " ^ y
   in greet "World!";;
 
-let exercise5c : ???  =
+let exercise5c : (int * float) -> int =
   fun (x, y) -> x + int_of_float y ;;
 
-let exercise5d : ??? =
+let exercise5d : int -> bool =
   fun x -> x < x + 1 ;;
 
-let exercise5e : ??? =
+let exercise5e : bool -> bool list =
   fun x -> if x then [x] else [] ;;
 
-remove this end of comment line too ----> *)
 
 (*======================================================================
 Part 3: First-order functional programming
