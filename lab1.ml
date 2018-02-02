@@ -204,7 +204,8 @@ let rec max_list (lst : int list) : int =
   match lst with
   | [] -> raise (Match_failure ("empty list", 1, 1))
   | [x] -> x
-  | fst :: snd :: tail -> max_list ((if fst >= snd then fst else snd) :: tail) ;;
+  | fst :: snd :: tail -> 
+      max_list ((if fst >= snd then fst else snd) :: tail) ;;
 
 (*......................................................................
 Exercise 9: Define a function zip, that takes two int lists and
@@ -221,7 +222,7 @@ that, zip [1] [2; 3; 4] = [(1, 2); (false, 3); (false, 4)]?
 let rec zip (x : int list) (y : int list) : (int * int) list =
   match x, y with
     | [], [] -> []
-    | [], y | y, [] -> raise (Match_failure ("lengths not the same", 1, 1))
+    | [], _y | _y, [] -> raise (Match_failure ("lengths not the same", 1, 1))
     | hd1 :: tl1, hd2 :: tl2 -> (hd1, hd2) :: (zip tl1 tl2) ;;
     
 
